@@ -1,11 +1,13 @@
 import Item from '../components/Item'
 
-function List({data}) {
+function List({data, selectThisHog}) {
 
 const dataList = data.map(item => (
     <Item 
         key={item.name}
-        pig={item} />
+        pig={item} 
+        selectThisHog={selectThisHog}
+        />
 ))
 
 return (

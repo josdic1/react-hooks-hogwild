@@ -1,15 +1,20 @@
+import { useState } from 'react';
+
+function Item({pig, selectThisHog}) {
+
+const [isHidden, setIsHidden] = useState(false)
 
 
-function Item({pig}) {
 
 return (
 <>
+{ !isHidden ?
 <div className="ui card">
   <div className="image">
     <img src={pig.image} alt="pig pic"/>
   </div>
   <div className="content">
-    <a className="header">{pig.name}</a>
+    <a className="header" onClick={() => selectThisHog(pig)}>{pig.name}</a>
     <div className="meta">
       <span className="date">{pig.greased ? 'Greased' : 'Not Greased'}</span>
     </div>
@@ -18,12 +23,24 @@ return (
     </div>
   </div>
   <div className="extra content">
-    <a>
+    <span>
       <i className="user icon"></i>
       Weight: {pig.weight}
-    </a>
+    </span>
   </div>
-</div>
+  
+</div> : ''}
+<div className="extra content">
+<button onClick={() => setIsHidden(!isHidden)}>
+    <span>
+        { !isHidden ? 
+    <i className="low vision icon"></i> :
+    <i className="eye icon"></i>
+        }
+    </span>
+    </button>
+  </div>
+
 </>
 )}
 
