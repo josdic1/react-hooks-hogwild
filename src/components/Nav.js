@@ -3,6 +3,7 @@ import piggy from "../assets/porco.png";
 
 const Nav = () => {
 	return (
+		<>
 		<div className="navWrapper">
 			<span className="headerText">HogWild</span>
 			<div className="TwirlyPig">
@@ -12,6 +13,7 @@ const Nav = () => {
 				A React App for County Fair Hog Fans
 			</span>
 		</div>
+		</>
 	);
 };
 
